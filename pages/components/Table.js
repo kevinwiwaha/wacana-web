@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { supabase } from "../service/supabase";
 export default function Table() {
-  const [links, setLinks] = useState([]);
+  const [links, setLinks] = useState([{}]);
   useEffect(() => {
     fetchLinks();
   }, []);
@@ -13,13 +13,32 @@ export default function Table() {
         setLinks(e);
       })
       .catch((e) => console.log(e));
-    setTimeout(() => {}, 1000);
   };
-  //   let handleClick = () => {
-  //     setLinks(links + 1)
-  //   };
+
   let data = links.data;
-  if (links.hasOwnProperty("data")) {
+  let listLinks = () => {
+    if(links.hasOwnProperty("data")){
+      return links.data.map((rows,i) => (
+        <tr key={i} className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                <th scope="row" className="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    {rows.url_key}
+                </th>
+                <td className="py-4 px-6" >
+                 
+                  <a
+                href="#"
+                className="text-red-500 hover:text-purple-900"
+              >
+                {rows.destination}
+              </a>
+                </td>
+                <td className="py-4 px-6 ">
+                    Laptop PC
+                </td>
+            </tr>
+      ))
+    }
+    
   }
   return (
     <div className="container py-5">
@@ -33,12 +52,12 @@ export default function Table() {
               <th scope="col" className="py-3 px-6">
                 Link
               </th>
-              <th scope="col" className="py-3 px-6">
+              <th scope="col" className="py-3 px-6 text-black hover:text-red-500">
                 Price
               </th>
             </tr>
           </thead>
-          <tbody></tbody>
+          <tbody>{listLinks()}</tbody>
         </table>
       </div>
     </div>

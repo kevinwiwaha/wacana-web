@@ -13,7 +13,9 @@ export default function Home() {
       <Script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js"></Script>
       <main>
         <Navigation></Navigation>
-        <Table></Table>
+        <Table>
+          
+        </Table>
       </main>
     </div>
   );
