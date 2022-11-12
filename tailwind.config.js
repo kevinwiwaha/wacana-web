@@ -10,5 +10,10 @@
   plugins: [
     require("flowbite/plugin")
   ],
-  theme: {},
+  theme: {
+    container: {
+      center:true,
+      padding: '2rem',
+    },
+  },
 };
