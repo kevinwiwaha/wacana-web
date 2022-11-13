@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 import { useEffect } from "react";
-import { supabase } from "./service/supabase";
+import { supabase } from "../service/supabase";
 const Link = () => {
   const router = useRouter();
   const { code } = router.query;
