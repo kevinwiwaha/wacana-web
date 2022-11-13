@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Script from "next/script";
+import Form from "./components/Form";
 import Navigation from "./components/navigation";
-import Table from "./components/Table";
 export default function Home() {
   return (
     <div>
@@ -13,9 +13,11 @@ export default function Home() {
       <Script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js"></Script>
       <main>
         <Navigation></Navigation>
-        <Table>
+        <Form></Form>
+
+        {/* <Table>
           
-        </Table>
+        </Table> */}
       </main>
     </div>
   );
