@@ -69,12 +69,12 @@ export default function Form() {
           <div className="flex  justify-center">
             <p className="mb-6 text-2xl">👇</p>
           </div>
-          <div className="flex justify-center">
+          <div className="md:flex justify-center">
             <div className="flex  items-center">
               <p className="mr-2 font-medium">wacana.in/</p>
             </div>
-            <div className="flex  items-center">
-              <div className="w-1/2 mr-2">
+            <div className="md:flex  items-center">
+              <div className="md:w-1/2 mb-2 md:mb-0 mr-2">
                 <input
                   autocomplete="off"
                   type="email"
