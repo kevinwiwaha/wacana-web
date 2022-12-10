@@ -1,7 +1,7 @@
 import React, { useState } from "react";
+import Fade from 'react-reveal/Fade';
 import Swal from "sweetalert2";
 import { supabase } from "../../service/supabase";
-
 export default function Form() {
   const [urlKey, setUrlKey] = useState("");
   const [destination, setDestination] = useState("");
@@ -50,10 +50,12 @@ export default function Form() {
   return (
     <div className="h-screen flex items-center justify-center">
       <form className="w-1/2">
-        <h1 className="text-center font-semibold text-3xl mb-6">
-          Persingkat Kata 📚
-        </h1>
-
+        
+        <Fade distance="25px" top>
+          <h1 className="text-center font-semibold text-7xl xl:mb-24">
+            Kenapa <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-teal-600">tautan</span> <br /> harus panjang ?
+          </h1>
+        </Fade>
         <div>
           <div class="mb-6">
             <input
